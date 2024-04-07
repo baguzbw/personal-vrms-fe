@@ -36,7 +36,7 @@ function SideMenu({ menu }) {
                   <div className="ms-4 flex flex-row items-center w-full">
                     <div className="mr-2 w-6 h-6">
                       {React.cloneElement(item.icon, {
-                        set: isActive(item.path, item.submenu) ? "bulk" : "two-tone", // Change to 'bulk' when active
+                        set: isActive(item.path, item.submenu) ? "bulk" : "two-tone", 
                         primaryColor: isActive(item.path, item.submenu) ? "#DC362E" : undefined,
                       })}
                     </div>
