@@ -14,7 +14,7 @@ export default function Navbar() {
   // buat capital
   const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
-  // Extract the last part of the path as the current page name, formatted
+  // Extract path terakhir 
   const currentPageName = pathnames.length > 0 ? formatSegment(pathnames[pathnames.length - 1]) : "VRMS";
 
   return (
