@@ -1,14 +1,15 @@
-import Content from "../../components/Footer";
+import Card from "../../components/Card";
+import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
 export default function Dashboard() {
   return (
     <div>
       <Navbar />
-      <div className="">
-        <h1>CONTENT BELUM</h1>
+      <div className="px-6 py-8">
+        <Card />
       </div>
-      <Content />
+      <Footer />
     </div>
   );
 }

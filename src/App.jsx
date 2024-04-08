@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/dashboard/Index";
 import RMNonTranslation from "./pages/rm-nontranslation/index";
@@ -9,12 +9,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="w-full min-h-screen flex">
-        {" "}
-        {/* Flex container for sidebar and content */}
         <Sidebar />
         <div className="flex-grow">
-          {" "}
           <Routes>
+            <Route path="/" element={<Navigate replace to="/dashboard" />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/resource-manager/translation" element={<RMTranslation />} />
             <Route path="/resource-manager/non-translation" element={<RMNonTranslation />} />
