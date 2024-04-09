@@ -3,16 +3,19 @@ import { ChevronDown } from "react-iconly";
 
 const DropdownButton = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // Set "Newest" as the default value for selectedLabel
   const [selectedLabel, setSelectedLabel] = useState("Newest");
+
   const items = [
-    { key: "1", label: "Newest" },
-    { key: "2", label: "Oldest" },
+    { key: "sort", label: "SORT", isHeader: true },
+    { key: "1", label: "Newest", isHeader: false },
+    { key: "2", label: "Oldest", isHeader: false },
   ];
 
-  const handleItemClick = (label) => {
-    setSelectedLabel(label);
-    setIsOpen(false);
+  const handleItemClick = (item) => {
+    if (!item.isHeader) {
+      setSelectedLabel(item.label);
+      setIsOpen(false);
+    }
   };
 
   return (
@@ -22,24 +25,30 @@ const DropdownButton = () => {
         <ChevronDown className="w-5 h-5" />
       </div>
       {isOpen && (
-        <div className="origin-top-right absolute right-0 mt-2 w-[120px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+        <div className="origin-top-right absolute right-0 mt-2 w-[120px] rounded-[10px] shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1">
-            {items.map((item) => (
-              <a
-                key={item.key}
-                href="#"
-                className="text-[#232323] block px-4 py-2 text-sm hover:bg-[#FBEBEA]"
-                role="menuitem"
-                tabIndex="-1"
-                id={`menu-item-${item.key}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleItemClick(item.label);
-                }}
-              >
-                {item.label}
-              </a>
-            ))}
+            {items.map((item) =>
+              item.isHeader ? (
+                <div key={item.key} className="text-[#BBBBBB] block px-4 py-2 text-[12px] font-semibold">
+                  {item.label}
+                </div>
+              ) : (
+                <div key={item.key} className="m-1">
+                  <a
+                    href="#"
+                    className="text-[#232323] block rounded-md px-3 py-2 text-sm hover:bg-[#FBEBEA]"
+                    role="menuitem"
+                    tabIndex="-1"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleItemClick(item);
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                </div>
+              )
+            )}
           </div>
         </div>
       )}
