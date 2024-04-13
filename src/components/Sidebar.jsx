@@ -1,6 +1,6 @@
+import { Activity, Document, Folder, Home, Logout, TwoUsers } from "react-iconly";
 import Logo from "../img/StarSoftware.png";
 import SideMenu from "./SideMenu";
-import { Home, Folder, Document, TwoUsers, Activity, Logout } from "react-iconly";
 
 // ngirim props
 const menuConfig = [
@@ -33,7 +33,7 @@ const menuConfig = [
 
 export default function Sidebar() {
   return (
-    <div className="h-screen border-r border-[#E9E9E9] w-[274px] bg-white py-[30px]">
+    <div className=" border-r border-[#E9E9E9] w-[274px] bg-white py-[30px]">
       <div className="flex justify-center mb-[50px]">
         <img src={Logo} alt="Star Software Logo" />
       </div>

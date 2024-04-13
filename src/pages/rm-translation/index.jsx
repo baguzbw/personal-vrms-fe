@@ -1,10 +1,10 @@
 import { PaperDownload, PaperUpload, Plus } from "react-iconly";
 import BaseButton from "../../components/BaseButton";
+import BaseTable from "../../components/BaseTable";
+import DropdownButton from "../../components/DropdownButton";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Search from "../../components/Search";
-import DropdownButton from "../../components/DropdownButton";
-
 
 export default function Translation() {
   return (
@@ -32,6 +32,9 @@ export default function Translation() {
             <span className="text-white">Add</span>
           </BaseButton>
         </div>
+      </div>
+      <div className="p-8">
+        <BaseTable />
       </div>
       <Footer />
     </div>
