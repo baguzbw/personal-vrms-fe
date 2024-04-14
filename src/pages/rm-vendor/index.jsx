@@ -1,15 +1,16 @@
 import { PaperDownload, PaperUpload, Plus } from "react-iconly";
 import BaseButton from "../../components/BaseButton";
+import BaseTable from "../../components/BaseTable";
 import DropdownButton from "../../components/DropdownButton";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Search from "../../components/Search";
 
-export default function Vendor() {
+export default function Translation() {
   return (
     <div>
       <Navbar />
-      <div className="p-8 flex justify-between gap-4">
+      <div className="p-8 pt-8 flex justify-between gap-4">
         <div className="flex gap-4">
           <BaseButton className="bg-white w-[131px] h-[48px] border border-[#E9E9E9] hover:bg-gray-50">
             <PaperUpload className="w-4 h-4 text-[#DC362E]" set="two-tone" />
@@ -31,6 +32,9 @@ export default function Vendor() {
             <span className="text-white">Add</span>
           </BaseButton>
         </div>
+      </div>
+      <div className="px-8 pt-2 pb-8">
+        <BaseTable />
       </div>
       <Footer />
     </div>
