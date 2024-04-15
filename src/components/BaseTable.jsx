@@ -98,9 +98,7 @@ const BaseTable = () => {
               <td style={{ width: "137px" }} className="py-2 border-b border-[#E9E9E9]">
                 <div className="flex items-center">
                   <Star size={18} primaryColor="#FFD155" set="bold" />
-                  <span className="ml-1">
-                    {user.age} <span className="text-[#BBBBBB]">/ 5</span>
-                  </span>
+                  <span className="ml-1">{user.age} <span className="text-[#BBBBBB]">/ 5</span></span>
                 </div>
               </td>
               <td style={{ width: "119px" }} className="py-2 border-b border-[#E9E9E9]">
