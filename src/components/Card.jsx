@@ -22,7 +22,7 @@ const iconColors = {
 const MiniCards = () => (
   <div className="flex justify-around flex-wrap">
     {Object.entries(data).map(([key, value]) => (
-      <Card key={key} className="flex flex-col items-center justify-center w-80 h-40 font-figtree mx-8 ">
+      <Card key={key} className="flex flex-col items-center justify-center w-80 h-40 font-figtree mx-8 border border-[#E9E9E9] ">
         <div className="flex items-center justify-end w-full px-4">
           <div className={`flex items-center justify-center w-20 h-20 rounded-full ${backgroundColors[key]} mr-6`}>
             <span style={{ color: iconColors[key] }}>
