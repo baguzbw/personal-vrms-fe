@@ -1,6 +1,7 @@
 import React from "react";
-import { User } from "react-iconly";
+
 import { useLocation } from "react-router-dom";
+import Avatar from "../assets/Avatar2.jpg";
 
 export default function Navbar() {
   const { pathname } = useLocation();
@@ -46,9 +47,9 @@ export default function Navbar() {
       </div>
 
       <div>
-        <div className="flex items-center bg-[#F9F9F9] rounded-3xl py-2 px-4 mr-9">
+        <div className="flex items-center bg-[#F9F9F9] rounded-3xl py-1 px-4 mr-9">
           <div className="p-2">
-            <User size="medium" />
+            <img src={Avatar} alt="star" style={{ borderRadius: "50%", width: "40px", height: "40px" }} />
           </div>
           <div className="ml-1">
             <div className="font-bold text-[#292929] text-base">Bagus Brang</div>

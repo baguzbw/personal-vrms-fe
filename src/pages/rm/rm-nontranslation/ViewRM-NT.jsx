@@ -1,47 +1,31 @@
+import { DotsThreeVertical, Plus } from "@phosphor-icons/react";
 import { useState } from "react";
-import { PaperDownload, PaperUpload, Plus, Setting, Star } from "react-iconly";
-import BaseButton from "../../components/BaseButton";
-import BaseTable from "../../components/BaseTable";
-import DropdownButton from "../../components/DropdownButton";
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
-import SearchInput from "../../components/Search";
+import { PaperDownload, PaperUpload, Star } from "react-iconly";
+import BaseButton from "../../../components/BaseButton";
+import BaseTable from "../../../components/BaseTable";
+import Footer from "../../../components/Footer";
+import Navbar from "../../../components/Navbar";
+import SearchInput from "../../../components/Search";
 
 const renderHeader = () => (
-  <tr className="bg-[#F9F9F9] text-[#9A9A9A] text-left">
-    <th style={{ width: "59px" }} className="py-3 border-y border-l border-[#E9E9E9] text-center">
-      No.
-    </th>
-    <th style={{ width: "161px" }} className="py-3 border-y border-[#E9E9E9]">
-      Maiden Name
-    </th>
-    <th style={{ width: "186px" }} className="py-3 border-y border-[#E9E9E9]">
-      Full Name
-    </th>
-    <th style={{ width: "217px" }} className="py-3 border-y border-[#E9E9E9]">
-      Email
-    </th>
-    <th style={{ width: "161px" }} className="py-3 border-y border-[#E9E9E9]">
-      Whatsapp
-    </th>
-    <th style={{ width: "137px" }} className="py-3 border-y border-[#E9E9E9]">
-      Average Rating
-    </th>
-    <th style={{ width: "119px" }} className="py-3 border-y border-[#E9E9E9]">
-      Created At
-    </th>
-    <th style={{ width: "68px" }} className="py-3 border-y border-r border-[#E9E9E9] ">
-      Action
-    </th>
+  <tr className="bg-[#F9F9F9] text-[#9A9A9A] text-left h-[57px]">
+    <th className="py-3 w-[59px] border-y border-l border-[#E9E9E9] text-center">No.</th>
+    <th className="py-3 w-[161px] border-y border-[#E9E9E9]">Username</th>
+    <th className="py-3 w-[186px] border-y border-[#E9E9E9]">Full Name</th>
+    <th className="py-3 w-[217px] border-y border-[#E9E9E9]">Email</th>
+    <th className="py-3 w-[161px] border-y border-[#E9E9E9]">Whatsapp</th>
+    <th className="py-3 w-[137px] border-y border-[#E9E9E9]">Average Rating</th>
+    <th className="py-3 w-[119px] border-y border-[#E9E9E9]">Created At</th>
+    <th className="py-3 w-[68px] border-y border-r border-[#E9E9E9] ">Action</th>
   </tr>
 );
 
 const renderRow = (user, index, startIndex, showActions) => (
-  <tr key={user.id} className="bg-white hover:bg-gray-100 text-sm text-gray-700">
+  <tr key={user.id} className="bg-white hover:bg-gray-100 text-sm text-gray-700 h-[57px]">
     <td className="py-2 border-b border-l border-[#E9E9E9] text-center">{startIndex + index + 1}</td>
-    <td className="py-2 border-b border-[#E9E9E9]">{user.maidenName}</td>
+    <td className="py-2 border-b border-[#E9E9E9]">{user.username}</td>
     <td className="py-2 border-b border-[#E9E9E9]">{`${user.firstName} ${user.lastName}`}</td>
-    <td className="py-2 border-b border-[#E9E9E9]">{user.email}</td>
+    <td className="py-2 border-b border-[#E9E9E9]">{user.domain}</td>
     <td className="py-2 border-b border-[#E9E9E9]">{user.phone}</td>
     <td className="py-2 border-b border-[#E9E9E9]">
       <div className="flex items-center">
@@ -53,14 +37,14 @@ const renderRow = (user, index, startIndex, showActions) => (
     {showActions && (
       <td className="py-2 border-b border-r border-[#E9E9E9]">
         <button className="ms-2 focus:outline-none">
-          <Setting set="two-tone" primaryColor="#DC362E" size="medium" />
+          <DotsThreeVertical color="#DC362E" size={24} weight="bold" />
         </button>
       </td>
     )}
   </tr>
 );
 
-export default function Vendor() {
+export default function NonTranslation() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (e) => {
@@ -86,9 +70,8 @@ export default function Vendor() {
           <SearchInput>
             <input type="text" placeholder="Search" className="py-3 px-2 ms-2 outline-none w-full text-sm" onChange={handleSearch} />
           </SearchInput>
-          <DropdownButton />
           <BaseButton className="bg-[#DC362E] border w-[131px] h-[48px] border-[#E9E9E9] hover:bg-red-500">
-            <Plus className="w-4 h-4 text-white" set="curved" />
+            <Plus className="w-4 h-4 text-white" size={24} weight="bold" />
             <span className="text-white">Add</span>
           </BaseButton>
         </div>

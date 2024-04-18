@@ -1,15 +1,16 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { ChevronDown } from "react-iconly";
 
-const DropdownButton = () => {
+const DropdownButton = ({ options }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLabel, setSelectedLabel] = useState("Newest");
+  const [selectedLabel, setSelectedLabel] = useState(options[0].label);
 
-  const items = [
-    { key: "sort", label: "SORT", isHeader: true },
-    { key: "1", label: "Newest", isHeader: false },
-    { key: "2", label: "Oldest", isHeader: false },
-  ];
+  const items = options.map((option, index) => ({
+    key: `${index}`,
+    label: option.label,
+    isHeader: index === 0, // Set the first item as header
+  }));
 
   const handleItemClick = (item) => {
     if (!item.isHeader) {
@@ -54,6 +55,14 @@ const DropdownButton = () => {
       )}
     </div>
   );
+};
+
+DropdownButton.propTypes = {
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default DropdownButton;
